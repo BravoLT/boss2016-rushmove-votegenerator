@@ -1,0 +1,10 @@
+package: github.com/bravolt/voting_machine
+homepage: https://www.bravolt.com
+license: MIT
+owners:
+  - name: Michael Nishizawa
+    email: michael.nishizawa@bravolt.com
+  - name: Bravo LT
+    homepage: http://www.bravolt.com
+import:
+  - package: github.com/Pallinder/go-randomdata

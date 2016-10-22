@@ -1,0 +1,5 @@
+vendor
+.idea
+*.iml
+*.swp
+voting_machine
