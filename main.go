@@ -1,6 +1,7 @@
 package main   // <-- this is a package name, similar to a Java program.  The main package is the starting point for any program. Packages do not necessarily correspond to filesystem path like they do in Java
 
-//imports can either be done individually as you would in Java or as a list in a single statement like so
+//imports can either be done individually as you would in Java or as a list in a single statement, called a "factored import", like so
+//  while there is no functional improvement to doing it this way,  this is the best practice for convenience and style reasons
 import (
 	"fmt"
 	"github.com/Pallinder/go-randomdata"
