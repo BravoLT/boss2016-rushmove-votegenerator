@@ -1,0 +1,12 @@
+[[Location]]
+name = Oklahoma
+population = 3818851
+age = 36.2
+householdIncome = 42492
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 67.80
+green = 7.10
+purple = 9.40
+orange = 15.70

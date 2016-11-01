@@ -1,0 +1,12 @@
+[[Location]]
+name = Hawaii
+population = 1392704
+age = 38.2
+householdIncome = 59290
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 22.90
+green = 1.80
+purple = 9.60
+orange = 65.70

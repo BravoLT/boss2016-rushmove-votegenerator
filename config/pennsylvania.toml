@@ -1,0 +1,12 @@
+[[Location]]
+name = Pennsylvania
+population = 12758729
+age = 40.4
+householdIncome = 48754
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 78.50
+green = 10.50
+purple = 6.10
+orange = 4.90

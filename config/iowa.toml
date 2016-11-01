@@ -1,0 +1,12 @@
+[[Location]]
+name = Iowa
+population = 3078116
+age = 38.0
+householdIncome = 48547
+party = tabs
+
+[[Location.racialBreakdown]]
+blue = 87.80
+green = 3.00
+purple = 5.30
+orange = 3.90

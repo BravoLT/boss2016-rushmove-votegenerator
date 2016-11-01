@@ -1,0 +1,12 @@
+[[Location]]
+name = Arizona
+population = 6561516
+age = 36.5
+householdIncome = 47357
+party = tabs
+
+[[Location.racialBreakdown]]
+blue = 56.90
+green = 3.90
+purple = 30.10
+orange = 9.10

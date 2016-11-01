@@ -1,0 +1,12 @@
+[[Location]]
+name = Michigan
+population = 9889024
+age = 39.3
+householdIncome = 45255
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 76.10
+green = 13.80
+purple = 4.60
+orange = 5.50

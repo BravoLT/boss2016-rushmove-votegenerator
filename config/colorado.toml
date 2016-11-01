@@ -1,0 +1,12 @@
+[[Location]]
+name = Colorado
+population = 5197580
+age = 36.2
+householdIncome = 54659
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 69.40
+green = 3.80
+purple = 20.90
+orange = 5.90

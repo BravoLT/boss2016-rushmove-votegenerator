@@ -1,0 +1,12 @@
+[[Location]]
+name = California
+population = 38066920
+age = 35.6
+householdIncome = 67034
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 39.20
+green = 5.70
+purple = 38.20
+orange = 16.90

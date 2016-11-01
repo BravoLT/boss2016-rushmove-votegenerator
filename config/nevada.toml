@@ -1,0 +1,12 @@
+[[Location]]
+name = Nevada
+population = 2761584
+age = 36.9
+householdIncome = 47827
+party = spaces
+
+[[Location.racialBreakdown]]
+blue = 52.70
+green = 8.00
+purple = 27.20
+orange = 12.10

@@ -1,0 +1,12 @@
+[[Location]]
+name = Kansas
+population = 2882946
+age = 36.0
+householdIncome = 48044
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 77.40
+green = 5.70
+purple = 11.00
+orange = 5.90

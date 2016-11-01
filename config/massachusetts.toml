@@ -1,0 +1,12 @@
+[[Location]]
+name = Massachusetts
+population = 6657291
+age = 39.3
+householdIncome = 62081
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 75.00
+green = 6.40
+purple = 10.20
+orange = 8.40

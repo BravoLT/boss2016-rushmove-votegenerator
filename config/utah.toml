@@ -1,0 +1,12 @@
+[[Location]]
+name = Utah
+population = 2858111
+age = 29.9
+householdIncome = 55117
+party = spaces
+
+[[Location.racialBreakdown]]
+blue = 79.80
+green = 1.00
+purple = 13.30
+orange = 5.90

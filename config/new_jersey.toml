@@ -1,0 +1,12 @@
+[[Location]]
+name = New Jersey
+population = 8874374
+age = 39.3
+householdIncome = 68342
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 57.80
+green = 12.80
+purple = 18.60
+orange = 10.80

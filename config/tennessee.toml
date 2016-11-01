@@ -1,0 +1,12 @@
+[[Location]]
+name = Tennessee
+population = 6451365
+age = 38.3
+householdIncome = 41644
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 75.00
+green = 16.70
+purple = 4.80
+orange = 3.50

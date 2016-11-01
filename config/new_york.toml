@@ -1,0 +1,12 @@
+[[Location]]
+name = New York
+population = 19594330
+age = 38.1
+householdIncome = 54119
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 57.30
+green = 14.40
+purple = 18.20
+orange = 10.10

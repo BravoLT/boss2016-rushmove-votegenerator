@@ -1,0 +1,12 @@
+[[Location]]
+name = Illinois
+population = 12868747
+age = 37.0
+householdIncome = 53234
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 62.90
+green = 14.20
+purple = 16.30
+orange = 6.60

@@ -1,0 +1,12 @@
+[[Location]]
+name = Florida
+population = 19361792
+age = 41.2
+householdIncome = 44926
+party = spaces
+
+[[Location.racialBreakdown]]
+blue = 56.60
+green = 15.40
+purple = 23.30
+orange = 4.70

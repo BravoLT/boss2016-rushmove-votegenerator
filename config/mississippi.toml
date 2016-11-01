@@ -1,0 +1,12 @@
+[[Location]]
+name = Mississippi
+population = 2984345
+age = 36.3
+householdIncome = 36646
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 57.60
+green = 37.20
+purple = 2.80
+orange = 2.40

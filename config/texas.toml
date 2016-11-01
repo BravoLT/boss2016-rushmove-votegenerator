@@ -1,0 +1,12 @@
+[[Location]]
+name = Texas
+population = 26092033
+age = 33.9
+householdIncome = 48259
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 44.30
+green = 11.60
+purple = 38.20
+orange = 5.90

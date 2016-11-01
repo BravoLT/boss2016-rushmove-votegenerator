@@ -1,0 +1,12 @@
+[[Location]]
+name =Alaska
+population =728300
+age = 33.4
+householdIncome = 69860
+party = tabs
+
+[[Location.racialBreakdown]]
+blue = 62.90
+green = 3.30
+purple = 6.20
+orange = 27.60

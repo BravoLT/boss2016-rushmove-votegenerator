@@ -1,0 +1,12 @@
+[[Location]]
+name = New Hampshire
+population = 1321069
+age = 41.8
+householdIncome = 63557
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 91.70
+green = 1.10
+purple = 3.10
+orange = 4.10

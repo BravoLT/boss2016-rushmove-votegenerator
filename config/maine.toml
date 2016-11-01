@@ -1,0 +1,12 @@
+[[Location]]
+name = Maine
+population = 1328535
+age = 43.5
+householdIncome = 45424
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 94.00
+green = 1.10
+purple = 1.40
+orange = 3.50

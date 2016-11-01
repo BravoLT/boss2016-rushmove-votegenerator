@@ -1,0 +1,12 @@
+[[Location]]
+name = North Carolina
+population = 9750405
+age = 37.8
+householdIncome = 43674
+party = spaces
+
+[[Location.racialBreakdown]]
+blue = 64.60
+green = 21.20
+purple = 8.70
+orange = 5.50

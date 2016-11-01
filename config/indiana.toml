@@ -1,0 +1,12 @@
+[[Location]]
+name = Indiana
+population = 6542411
+age = 37.2
+householdIncome = 45734
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 80.80
+green = 9.00
+purple = 6.30
+orange = 3.90

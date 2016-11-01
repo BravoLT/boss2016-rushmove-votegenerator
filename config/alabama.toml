@@ -1,0 +1,12 @@
+[[Location]]
+name = Alabama
+population = 4817678
+age = 38.2
+householdIncome = 40489
+party = vim
+
+[[Location.racialBreakdown]]
+blue		= 66.60
+green		= 26.20
+purple	=	4.00
+orange	=	3.20

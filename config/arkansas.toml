@@ -1,0 +1,12 @@
+[[Location]]
+name = Arkansas
+population = 2947036
+age = 37.6
+householdIncome = 38758
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 73.90
+green = 15.50
+purple = 6.70
+orange = 3.90

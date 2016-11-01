@@ -1,0 +1,12 @@
+[[Location]]
+name = Georgia
+population = 9907756
+age = 35.8
+householdIncome = 45395
+party = tabs
+
+[[Location.racialBreakdown]]
+blue = 55.00
+green = 30.40
+purple = 9.10
+orange = 5.50

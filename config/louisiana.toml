@@ -1,0 +1,12 @@
+[[Location]]
+name = Louisiana
+population = 4601049
+age = 36.0
+householdIncome = 41725
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 59.70
+green = 31.90
+purple = 4.60
+orange = 3.80

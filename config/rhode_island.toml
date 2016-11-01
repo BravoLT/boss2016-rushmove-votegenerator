@@ -1,0 +1,12 @@
+[[Location]]
+name = Rhode Island
+population = 1053252
+age = 39.7
+householdIncome = 53966
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 75.10
+green = 5.20
+purple = 13.30
+orange = 6.40

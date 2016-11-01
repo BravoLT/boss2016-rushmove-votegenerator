@@ -1,0 +1,12 @@
+[[Location]]
+name = North Dakota
+population = 704925
+age = 35.9
+householdIncome = 51618
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 87.70
+green = 1.50
+purple = 2.60
+orange = 8.20

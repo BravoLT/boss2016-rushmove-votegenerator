@@ -1,0 +1,12 @@
+[[Location]]
+name = Nebraska
+population = 1855617
+age = 36.2
+householdIncome = 49520
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 81.20
+green = 4.50
+purple = 9.70
+orange = 4.60

@@ -1,0 +1,12 @@
+[[Location]]
+name = South Carolina
+population = 4727273
+age = 38.3
+householdIncome = 42442
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 63.90
+green = 27.40
+purple = 5.30
+orange = 3.40

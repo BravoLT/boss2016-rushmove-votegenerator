@@ -1,0 +1,12 @@
+[[Location]]
+name = Maryland
+population = 5887776
+age = 38.1
+householdIncome = 69272
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 53.60
+green = 29.00
+purple = 8.80
+orange = 8.60

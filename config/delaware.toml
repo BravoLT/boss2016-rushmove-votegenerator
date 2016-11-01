@@ -1,0 +1,12 @@
+[[Location]]
+name = Delaware
+population = 917060
+age = 39.1
+householdIncome = 58548
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 64.40
+green = 21.10
+purple = 8.60
+orange = 5.90

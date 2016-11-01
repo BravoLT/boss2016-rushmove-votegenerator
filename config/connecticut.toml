@@ -1,0 +1,12 @@
+[[Location]]
+name = Connecticut
+population = 3592053
+age = 40.3
+householdIncome = 66953
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 69.80
+green = 9.50
+purple = 14.30
+orange = 6.40

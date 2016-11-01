@@ -1,0 +1,12 @@
+[[Location]]
+name = West Virginia
+population = 1853881
+age = 41.6
+householdIncome = 37435
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 92.70
+green = 3.20
+purple = 1.30
+orange = 2.80

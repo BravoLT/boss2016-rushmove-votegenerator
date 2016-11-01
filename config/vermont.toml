@@ -1,0 +1,12 @@
+[[Location]]
+name = Vermont
+population = 626358
+age = 42.2
+householdIncome = 52644
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 93.90
+green = 1.00
+purple = 1.60
+orange = 3.50

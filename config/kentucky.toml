@@ -1,0 +1,12 @@
+[[Location]]
+name = Kentucky
+population = 4383272
+age = 38.3
+householdIncome = 41141
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 85.80
+green = 7.80
+purple = 3.20
+orange = 3.20

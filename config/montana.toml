@@ -1,0 +1,12 @@
+[[Location]]
+name = Montana
+population = 1006370
+age = 39.8
+householdIncome = 44736
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 87.20
+green = 0.40
+purple = 3.20
+orange = 9.20

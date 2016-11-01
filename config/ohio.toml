@@ -1,0 +1,12 @@
+[[Location]]
+name = Ohio
+population = 11560380
+age = 39.1
+householdIncome = 45749
+party = tabs
+
+[[Location.racialBreakdown]]
+blue = 80.50
+green = 12.00
+purple = 3.30
+orange = 4.20

@@ -1,0 +1,12 @@
+[[Location]]
+name = Oregon
+population = 3900343
+age = 38.9
+householdIncome = 47590
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 77.60
+green = 1.70
+purple = 12.10
+orange = 8.60

@@ -1,0 +1,12 @@
+[[Location]]
+name = Idaho
+population = 1599464
+age = 35.2
+householdIncome = 43028
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 83.30
+green = 0.50
+purple = 11.70
+orange = 4.50

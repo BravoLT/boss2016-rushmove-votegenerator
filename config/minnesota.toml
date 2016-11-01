@@ -1,0 +1,12 @@
+[[Location]]
+name = Minnesota
+population = 5383661
+age = 37.6
+householdIncome = 58931
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 82.10
+green = 5.30
+purple = 4.90
+orange = 7.70

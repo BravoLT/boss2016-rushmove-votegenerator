@@ -1,0 +1,12 @@
+[[Location]]
+name = Wyoming
+population = 575251
+age = 36.8
+householdIncome = 55430
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 84.80
+green = 1.00
+purple = 9.40
+orange = 4.80

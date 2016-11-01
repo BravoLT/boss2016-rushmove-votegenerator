@@ -1,0 +1,12 @@
+[[Location]]
+name = Wisconsin
+population = 5724692
+age = 38.8
+householdIncome = 49993
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 82.70
+green = 6.10
+purple = 6.20
+orange = 5.00

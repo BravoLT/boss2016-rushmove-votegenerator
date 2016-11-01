@@ -1,0 +1,12 @@
+[[Location]]
+name = Missouri
+population = 6028076
+age = 38.1
+householdIncome = 45043
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 80.50
+green = 11.40
+purple = 3.80
+orange = 4.30

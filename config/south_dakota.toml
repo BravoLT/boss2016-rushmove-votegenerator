@@ -1,0 +1,12 @@
+[[Location]]
+name = South Dakota
+population = 834708
+age = 36.8
+householdIncome = 47817
+party = vim
+
+[[Location.racialBreakdown]]
+blue = 83.60
+green = 1.50
+purple = 3.20
+orange = 11.70

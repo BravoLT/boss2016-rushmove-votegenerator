@@ -1,0 +1,12 @@
+[[Location]]
+name = New Mexico
+population = 2080085
+age = 36.8
+householdIncome = 42322
+party = emacs
+
+[[Location.racialBreakdown]]
+blue = 39.60
+green = 1.80
+purple = 47.00
+orange = 11.60
