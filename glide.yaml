@@ -8,3 +8,4 @@ owners:
     homepage: http://www.bravolt.com
 import:
   - package: github.com/Pallinder/go-randomdata
+  - package: github.com/BurntSushi/toml

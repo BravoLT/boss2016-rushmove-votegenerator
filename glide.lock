@@ -1,6 +1,8 @@
-hash: 5211cf143ac8468e99cf674f35df830bcde7bc563d52463ae2cf64effcb89d9f
-updated: 2016-10-15T12:55:36.948436848-04:00
+hash: 45c0c8be2e3da93f12989c94bb32954a629950c59d6bd4a060195ca0211e7b33
+updated: 2016-11-06T20:40:33.609872768-05:00
 imports:
+- name: github.com/BurntSushi/toml
+  version: 99064174e013895bbd9b025c31100bd1d9b590ca
 - name: github.com/Pallinder/go-randomdata
   version: 01563c9f5c2dd648444bde7b3705a37698581364
 testImports: []

@@ -2,16 +2,49 @@ package main
 
 import (
 	"time"
+	"os"
 	"fmt"
-	"strconv"
+	_ "strconv"
 	"github.com/Pallinder/go-randomdata"
+	"github.com/BurntSushi/toml"
+	"log"
 )
 
-func main() {
+var location *Location
 
+func main() {
 	//read config
+  location = initLocation("alaska")
+
+	fmt.Println("Location is " + location.Name)
 	//
 
+}
+
+func initLocation(locationName string) *Location {
+	configfile := "config/"+locationName+".toml"
+	if _, err := os.Stat(configfile); err != nil {
+		log.Fatal("No valid config file found for ",configfile)
+	}
+
+	var location Location
+	if _, err := toml.DecodeFile(configfile, &location); err != nil {
+		log.Fatal(err)
+	}
+
+	return &location
+}
+
+func vote() {
+	ballot := new(Ballot)
+	if randomdata.Boolean() {
+		ballot.Choice = MOVE
+	} else {
+		ballot.Choice = STAY
+	}
+
+	ballot.PollingLocation = location //this will be set by the config file
+	ballot.Time = time.Now()
 }
 
 // An example of how you would implement an enum in Go
@@ -23,7 +56,7 @@ const (
 	TABS Party = "tabs"
 )
 
-type Race int
+type Race string
 const (
 	BLUE Race = "blue"
 	GREEN Race = "green"
@@ -34,23 +67,27 @@ const (
 type BallotOption int
 const (
 	MOVE BallotOption = iota
-	REMAIN
+	STAY
 )
 
 
 type Location struct {
-	name string
-	population int
-	age int
-	householdIncome int
-	party Party 		//the most popular party in the location
-	racialBreakdown map[Race] float32
+	Ballot
+	Another
+	Name string
+	Population int
+	Age int
+	HouseholdIncome int
+	PartyPreference Party 		//the most popular party in the location
+	RacialBreakdown map[Race] float32
 }
 
-
+type Another struct {
+	name string
+}
 
 type Ballot struct {
-	choice BallotOption
-	location *Location
-	time time.Time
+	Choice BallotOption
+	PollingLocation *Location
+	Time time.Time
 }
