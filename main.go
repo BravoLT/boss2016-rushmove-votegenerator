@@ -9,14 +9,18 @@ import (
 	"os"
 	"encoding/json"
 	"sync"
+	"net/http"
+	"bytes"
 )
 
 func main() {
 	Test()
+
 	var wg sync.WaitGroup
 
 	wg.Add(50)
 
+	fmt.Println("Opening Eastern Timezone polls at ", time.Now())
 	//Eastern
 	go openPoll("Connecticut", 3592053, 15, &wg)
 	go openPoll("Delaware", 917060, 25, &wg)
@@ -39,13 +43,14 @@ func main() {
 	go openPoll("Virginia", 8185131, 5, &wg)
 	go openPoll("WestVirginia", 1853881, -25, &wg)
 
-	time.Sleep(time.Second * 60) //sleep, seconds to minutes
+	time.Sleep(time.Second * 120) //sleep, seconds to minutes
 
+	fmt.Println("Opening Central Timezone polls at ", time.Now())
 	//Central
 	go openPoll("Alabama", 4817678, -10, &wg)
 	go openPoll("Arkansas", 2947036, -5, &wg)
 	go openPoll("Illinois", 12868747, 5, &wg)
-	go openPoll("Iowa", 4383272, -15, &wg)
+	go openPoll("Iowa", 3078116, -15, &wg)
 	go openPoll("Kansas", 2882946, -25, &wg)
 	go openPoll("Kentucky", 4383272, -15, &wg)
 	go openPoll("Louisiana", 4601049, 0, &wg)
@@ -60,7 +65,9 @@ func main() {
 	go openPoll("Texas", 26092033, -25, &wg)
 	go openPoll("Wisconsin", 5724692, 20, &wg)
 
-	time.Sleep(time.Second * 60) //sleep, seconds to minutes
+	time.Sleep(time.Second * 120) //sleep, seconds to minutes
+
+	fmt.Println("Opening Mountain Timezone polls at ", time.Now())
 	//Mountain
 	go openPoll("Arizona", 6561516, -5, &wg)
 	go openPoll("Colorado", 5197580, 5, &wg)
@@ -69,7 +76,9 @@ func main() {
 	go openPoll("NewMexico", 2080085, 0, &wg)
 	go openPoll("Utah", 2858111, -35, &wg)
 
-	time.Sleep(time.Second * 60) //sleep, seconds to minutes
+	time.Sleep(time.Second * 120) //sleep, seconds to minutes
+
+	fmt.Println("Opening Pacific Timezone polls at ", time.Now())
 	//Pacific
 	go openPoll("California", 38066920, 15, &wg)
 	go openPoll("Nevada", 2761584, 0, &wg)
@@ -77,10 +86,13 @@ func main() {
 	go openPoll("Washington", 6899123, 15, &wg)
 	go openPoll("Wyoming", 575251, -30, &wg)
 
-	time.Sleep(time.Second * 60) //sleep, seconds to minutes
+	time.Sleep(time.Second * 120) //sleep, seconds to minutes
+
+	fmt.Println("Opening Alaska polls at ", time.Now())
 	go openPoll("Alaska", 728300, 0, &wg)
 
-	time.Sleep(time.Second * 60) //sleep, seconds to minutes
+	time.Sleep(time.Second * 120) //sleep, seconds to minutes
+	fmt.Println("Opening Hawaii polls at ", time.Now())
 	go openPoll("Hawaii", 1392704, 0, &wg)
 
 	wg.Wait()
@@ -92,9 +104,11 @@ func openPoll(location string, population int, weight int, wg *sync.WaitGroup) {
 
 	pool := generateVotingPool(weight)
 
+	// set participation at 65%
+	voters := int(float32(population) * .65)
 	var move, stay int
 
-	for i := 0; i < population; i++ {
+	for i := 0; i < voters; i++ {
 		randomIdx := rd.Number(0, 99)
 		choice := pool[randomIdx]
 
@@ -104,24 +118,48 @@ func openPoll(location string, population int, weight int, wg *sync.WaitGroup) {
 			stay++
 		}
 
-		ballot := Ballot{Choice: choice, Location: location, Time: time.Now() }
+		ballot := Ballot{ Choice: choice, Location: location, Time: time.Now().Unix() }
 
-
-		//jsonString
-		_, err := json.Marshal(ballot)
-		if err != nil {
-			fmt.Println("ERROR generating a ballot")
-		}
-
-		//fmt.Println(string(jsonString)) // FIXME: send to Flume
+		sendToFlume(ballot)
 	}
 
-	movePct := (float32(move) / float32(population)) * float32(100)
-	stayPct := (float32(stay) / float32(population)) * float32(100)
-	fmt.Println(movePct, "% to MOVE [", location, "]");
-	fmt.Println(stayPct, "% to STAY [", location, "]");
+	movePct := (float32(move) / float32(voters)) * float32(100)
+	stayPct := (float32(stay) / float32(voters)) * float32(100)
+	fmt.Println("Time: ", time.Now(),"[", location, "]\n\t",movePct, "% to MOVE\n\t",stayPct, "% to STAY")
 
 }
+
+func sendToFlume(ballot Ballot) error {
+	url := "http://45.31.163.169:4444/"
+
+	ballotJson, _ := json.Marshal(ballot)
+	jsonEnvelope := JsonBody{Body: string(ballotJson)}
+	newPayload := [1]JsonBody {jsonEnvelope}
+
+	json, err := json.Marshal(newPayload)
+	if err != nil {
+		fmt.Println("ERROR generating a ballot")
+	}
+
+	req, err := http.NewRequest("POST", url, bytes.NewBuffer(json))
+	if err != nil {
+		return err
+	}
+	req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{}
+	if rsp, err := client.Do(req); err != nil {
+		return err
+	} else {
+		defer rsp.Body.Close()
+		if rsp.StatusCode != 200 {
+			fmt.Println("Failure on request ",rsp.StatusCode, string(json))
+		}
+	}
+
+	return nil
+}
+
 
 type PollTime struct {
 	start time.Time
@@ -166,10 +204,15 @@ func generateVotingPool(weight int) ChoicePool {
 
 type ChoicePool [100]bool
 
+
+type JsonBody struct {
+	Body string `json:"body"`
+}
+
 type Ballot struct {
-	Choice   bool
-	Location string
-	Time     time.Time
+	Choice   bool      `json:"choice"`
+	Location string    `json:"location"`
+	Time     int64     `json:"time"`
 }
 
 // Unit Tests
