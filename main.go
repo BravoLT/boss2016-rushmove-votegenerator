@@ -4,9 +4,6 @@ import (
 	"fmt"
 	"time"
 	rd "github.com/Pallinder/go-randomdata"
-	"strconv"
-	"errors"
-	"os"
 	"encoding/json"
 	"sync"
 	"net/http"
@@ -14,8 +11,6 @@ import (
 )
 
 func main() {
-	Test()
-
 	var wg sync.WaitGroup
 
 	wg.Add(50)
@@ -215,69 +210,3 @@ type Ballot struct {
 	Time     int64     `json:"time"`
 }
 
-// Unit Tests
-
-func Test() {
-	if err := testWeights(0, 50, true); err != nil {
-		reportFailure(err)
-	} else {
-		fmt.Println("testWeights 0,50 .... SUCCESS")
-	}
-
-	if err := testWeights(-10, 40, true); err != nil {
-		reportFailure(err)
-	} else {
-		fmt.Println("testWeights -10,40 .... SUCCESS")
-	}
-
-	if err := testWeights(10, 60, true); err != nil {
-		reportFailure(err)
-	} else {
-		fmt.Println("testWeights 10,60 .... SUCCESS")
-	}
-
-	if err := testWeights(-50, 0, true); err != nil {
-		reportFailure(err)
-	} else {
-		fmt.Println("testWeights -50,0 .... SUCCESS")
-	}
-
-	if err := testWeights(50, 100, true); err != nil {
-		reportFailure(err)
-	} else {
-		fmt.Println("testWeights 50,100 .... SUCCESS")
-	}
-
-}
-
-func reportFailure(err error) {
-	fmt.Println("Unit Tests failed, can not continue execution")
-	fmt.Println(err)
-
-	os.Exit(1)
-}
-
-func testWeights(weight int, expectedCount int, expectedValue bool) error {
-	pool := generateVotingPool(weight)
-	if l := len(pool); l != 100 {
-		return errors.New("Voting pool was the wrong size, should be 100, but was " + strconv.Itoa(len(pool)))
-	}
-
-	actualCount := count(pool[:], expectedValue)
-	if actualCount != expectedCount {
-		return errors.New("Wrong number of " + strconv.FormatBool(expectedValue) + " values, should be " + strconv.Itoa(expectedCount) + " but was " + strconv.Itoa(actualCount))
-	}
-
-	return nil;
-}
-
-func count(vs []bool, value bool) int {
-	count := 0
-	for _, v := range vs {
-		if v == value {
-			count++
-		}
-	}
-
-	return count
-}
